@@ -193,8 +193,8 @@ def validate(epoch, val_loader, sr_model, seg_model, sr_criterion, psnr_criterio
             psnr = 10 * log10(1 / mse.data)
             avg_psnr_bicubic += psnr
             
-            #seg_prediction = seg_model(sr_prediction)
-            seg_prediction = seg_model(sr_prediction*255)
+            seg_prediction = seg_model(sr_prediction)
+            #seg_prediction = seg_model(sr_prediction*255)
             
             msk = msk.long()
             seg_loss = seg_criterion(seg_prediction, msk)       
