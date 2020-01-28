@@ -1,0 +1,1 @@
+python -W ignore eval.py --data_dir /home/datasets/coffee_task/ --exp_name coffee_task_8_01x1000  --test_dir test --sr_model sr_coffee_task_8_01x1000_tmp_best.pth --seg_model seg_coffee_task_8_01x1000_tmp_best.pth --num_classes 2
