@@ -30,16 +30,16 @@ python3 eval.py [parameters]
 - dataset_name (main dataset folder -> data_dir in the parameters)
 	- train (can be changed by the parameter train_dir)
 		- {training HR images} (the images are automatically downsampled during runtime)
-  - train_msk (can be changed by the parameter train_dir)
-    - {semantic segmentation ground truth of training HR images} (the masks should have the exact same name as the corresponding image in the train folder)   
-  - test (can be changed by the parameter test_dir)
-		- {testing LR images} (the images are automatically downsampled during runtime)
-  - test_msk (can be changed by the parameter test_dir)
-    - {semantic segmentation ground truth of testing HR images} (the masks should have the exact same name as the corresponding image in the test folder)
-  - (OPTIONAL) val (can be changed by the parameter val_dir) (if not set, a portion of the training set will be separated for validation)
-    - {validation HR images}
-  - (OPTIONAL) val_msk (can be changed by the parameter val_dir)
-    - {semantic segmentation ground truth of validation HR images} (the masks should have the exact same name as the corresponding image in the validation folder)
+	- train_msk (can be changed by the parameter train_dir)
+  		- {semantic segmentation ground truth of training HR images} (the masks should have the exact same name as the corresponding image in the train folder)   
+	- test (can be changed by the parameter test_dir)
+  		- {testing LR images} (the images are automatically downsampled during runtime)
+	- test_msk (can be changed by the parameter test_dir)
+  		- {semantic segmentation ground truth of testing HR images} (the masks should have the exact same name as the corresponding image in the test folder)
+	- (OPTIONAL) val (can be changed by the parameter val_dir) (if not set, a portion of the training set will be separated for validation)
+  		- {validation HR images}
+	- (OPTIONAL) val_msk (can be changed by the parameter val_dir)
+  		- {semantic segmentation ground truth of validation HR images} (the masks should have the exact same name as the corresponding image in the validation folder)
    
 ### Observation:
   - The masks (ground truth images) should be converted beforehand to a 1-channel (grayscale) image, where each pixel represents the class of the image (pixel value 0 for the first class, pixel value 1 for second class, ..., pixel value N-1 for the Nth class).
@@ -47,15 +47,15 @@ python3 eval.py [parameters]
 ### Dataset Folder Organization Example:
   - data_root_path/
     - train/
-      - top_mosaic_09cm_area1_tif_crop1.png
-      - top_mosaic_09cm_area1_tif_crop2.png
+      - top_mosaic_09cm_area1_crop1.png
+      - top_mosaic_09cm_area1_crop2.png
     - train_msk/ (contains 1-channel masks images with pixels values between 0 and N-1, where N is the number of classes of the dataset)
-      - top_mosaic_09cm_area1_tif_crop1.png
-      - top_mosaic_09cm_area1_tif_crop2.png 
+      - top_mosaic_09cm_area1_crop1.png
+      - top_mosaic_09cm_area1_crop2.png 
     - test/
-      - top_mosaic_09cm_area11_tif_crop0.png 
+      - top_mosaic_09cm_area11_crop0.png 
     - test_msk/ (contains 1-channel masks images with pixels values between 0 and N-1, where N is the number of classes of the dataset)
-      - top_mosaic_09cm_area11_tif_crop0.png
+      - top_mosaic_09cm_area11_crop0.png
 
 
 ------------
